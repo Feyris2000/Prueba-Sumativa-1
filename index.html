@@ -16,6 +16,15 @@ body.dark .event,
 body.dark #galeria figcaption {
     color: #000 !important;
 }
+
+/* =========================================================
+   📌 AJUSTE: Todas las imágenes del mismo tamaño
+   ========================================================= */
+#galeria img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
 </style>
 
 </head>
@@ -84,17 +93,55 @@ body.dark #galeria figcaption {
   <h2>Galería</h2>
   <div class="grid">
 
-    <!-- SIGNO DE PREGUNTA EN TODAS LAS IMÁGENES -->
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Snoopy</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Charlie Brown</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Lucy</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Linus</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Sally</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Schroeder</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Peppermint Patty</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Marcie</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Woodstock</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Franklin</figcaption></figure>
+    <figure class="card fade">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png">
+      <figcaption>Snoopy</figcaption>
+    </figure>
+
+    <figure class="card fade">
+      <img src="https://upload.wikimedia.org/wikipedia/en/2/22/Charlie_Brown.png">
+      <figcaption>Charlie Brown</figcaption>
+    </figure>
+
+    <figure class="card fade">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png">
+      <figcaption>Lucy</figcaption>
+    </figure>
+
+    <figure class="card fade">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png">
+      <figcaption>Linus</figcaption>
+    </figure>
+
+    <figure class="card fade">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png">
+      <figcaption>Sally</figcaption>
+    </figure>
+
+    <figure class="card fade">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png">
+      <figcaption>Schroeder</figcaption>
+    </figure>
+
+    <figure class="card fade">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png">
+      <figcaption>Peppermint Patty</figcaption>
+    </figure>
+
+    <figure class="card fade">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png">
+      <figcaption>Marcie</figcaption>
+    </figure>
+
+    <figure class="card fade">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png">
+      <figcaption>Woodstock</figcaption>
+    </figure>
+
+    <figure class="card fade">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png">
+      <figcaption>Franklin</figcaption>
+    </figure>
 
   </div>
 </section>
@@ -107,15 +154,15 @@ body.dark #galeria figcaption {
     <article class="event">1950 – Primera tira de Peanuts</article>
     <article class="event">1952 – Aparecen Lucy y Linus</article>
     <article class="event">1957 – Snoopy empieza a caminar en dos patas</article>
-    <article class="event">1965 – Estreno del especial navideño (ganó Emmy)</article>
+    <article class="event">1965 – Estreno del especial navideño</article>
     <article class="event">1966 – Snoopy como piloto del Barón Rojo</article>
     <article class="event">1968 – Primera aparición de Franklin</article>
-    <article class="event">1969 – NASA adopta a Snoopy como mascota de seguridad</article>
-    <article class="event">1985 – Schulz recibe estrella en Hollywood</article>
-    <article class="event">1990 – 40° aniversario de Peanuts</article>
-    <article class="event">2000 – Última tira publicada</article>
-    <article class="event">2015 – Estreno de "The Peanuts Movie"</article>
-    <article class="event">2021 – Nuevas series en Apple TV+</article>
+    <article class="event">1969 – NASA adopta a Snoopy</article>
+    <article class="event">1985 – Schulz recibe su estrella</article>
+    <article class="event">1990 – 40° aniversario</article>
+    <article class="event">2000 – Última tira</article>
+    <article class="event">2015 – The Peanuts Movie</article>
+    <article class="event">2021 – Nuevas series</article>
 
   </div>
 </section>
@@ -141,6 +188,11 @@ body.dark #galeria figcaption {
 /* Loader */
 window.addEventListener("load", () => {
   document.getElementById("loader").style.display = "none";
+});
+
+/* 📌 FIX: Al entrar, todos los .fade se vuelven visibles */
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".fade").forEach(el => el.classList.add("visible"));
 });
 
 /* Menu */
