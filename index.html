@@ -4,7 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Snoopy - Peanuts</title>
+
 <link rel="stylesheet" href="styles.css">
+
+<style>
+/* =========================================================
+   🔧 FIX: Texto visible en recuadros blancos en modo oscuro
+   ========================================================= */
+body.dark .card,
+body.dark .event,
+body.dark #galeria figcaption {
+    color: #000 !important;
+}
+</style>
+
 </head>
 
 <body>
@@ -70,16 +83,19 @@
 <section id="galeria">
   <h2>Galería</h2>
   <div class="grid">
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/5/5b/Snoopy.png"><figcaption>Snoopy</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/2/22/Charlie_Brown.png"><figcaption>Charlie Brown</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/6/63/Lucy_van_Pelt.png"><figcaption>Lucy</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/3/34/Linus_van_Pelt.png"><figcaption>Linus</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/8/8e/Sally_Brown.png"><figcaption>Sally</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Schroeder.png"><figcaption>Schroeder</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/0/02/Peppermint_Patty.png"><figcaption>Peppermint Patty</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/2/24/Marcie.png"><figcaption>Marcie</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/8/87/Woodstock_%28Peanuts%29.png"><figcaption>Woodstock</figcaption></figure>
-    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/4/45/Franklin_%28Peanuts%29.png"><figcaption>Franklin</figcaption></figure>
+
+    <!-- SIGNO DE PREGUNTA EN TODAS LAS IMÁGENES -->
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Snoopy</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Charlie Brown</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Lucy</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Linus</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Sally</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Schroeder</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Peppermint Patty</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Marcie</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Woodstock</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Black_question_mark.png"><figcaption>Franklin</figcaption></figure>
+
   </div>
 </section>
 
