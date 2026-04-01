@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka:wght@400;600&display=swap');
 
 /* =========================
-   VARIABLES
+   VARIABLES DE COLOR
 ========================= */
 :root {
     --bg: #fff8dc;
@@ -14,13 +14,15 @@
     --accent: #457b9d;
     --white: #ffffff;
     --black: #000000;
-    --glass: rgba(255,255,255,0.65);
+    --glass: rgba(255,255,255,0.6);
+    --radius: 15px;
+    --shadow: 6px 6px 0 black;
 }
 
 body.dark {
     --bg: #121212;
     --text: #f1f1f1;
-    --glass: rgba(0,0,0,0.45);
+    --glass: rgba(0,0,0,0.4);
 }
 
 /* =========================
@@ -33,13 +35,25 @@ body.dark {
     cursor: url("https://cur.cursors-4u.net/cursors/cur-9/cur862.cur"), auto;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Comic Neue', cursive;
     background: var(--bg);
     color: var(--text);
-    transition: 0.5s;
+    transition: 0.4s;
     line-height: 1.6;
-    font-size: 16px;
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
 }
 
 /* =========================
@@ -52,14 +66,21 @@ body::before {
     height: 200%;
     background: radial-gradient(circle, var(--secondary) 10%, transparent 10%) repeat;
     background-size: 80px 80px;
-    animation: moveBg 25s linear infinite;
-    opacity: 0.25;
+    animation: moveBg 30s linear infinite;
+    opacity: 0.2;
     z-index: -1;
 }
 
 @keyframes moveBg {
     from { transform: translate(0,0); }
     to { transform: translate(-200px,-200px); }
+}
+
+/* =========================
+   SECCIONES
+========================= */
+section {
+    margin: 2rem 0;
 }
 
 /* =========================
@@ -98,19 +119,18 @@ h1, h2, h3 {
     letter-spacing: 1px;
 }
 
-h1 { font-size: 2.3rem; }
-h2 { font-size: 1.9rem; margin-bottom: 1rem; }
-h3 { font-size: 1.3rem; }
-p { font-size: 1rem; }
+h2 {
+    margin-bottom: 1.5rem;
+}
 
 /* =========================
-   HEADER
+   HEADER / NAV
 ========================= */
 header {
     background: var(--secondary);
     border-bottom: 4px solid black;
     box-shadow: 0 4px 0 black;
-    padding: 1rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -119,9 +139,7 @@ header {
     z-index: 1000;
 }
 
-/* =========================
-   MENÚ
-========================= */
+/* MENÚ */
 #menu {
     display: none;
 }
@@ -136,8 +154,8 @@ header {
 
 nav a {
     background: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
     border: 2px solid black;
     box-shadow: 2px 2px 0 black;
     text-decoration: none;
@@ -147,8 +165,8 @@ nav a {
 }
 
 nav a:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 4px 4px 0 black;
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 black;
 }
 
 /* =========================
@@ -158,46 +176,12 @@ nav a:hover {
     background: url("https://upload.wikimedia.org/wikipedia/commons/3/3a/Snoopy_on_doghouse.png") center/cover fixed;
     padding: 7rem 2rem;
     text-align: center;
-    color: black;
+    color: white;
 }
 
-/* Título hero estilo cómic */
 #hero h2 {
-    font-size: 2.8rem;
-    font-family: 'Fredoka', sans-serif;
-    background: #ffd166;
-    display: inline-block;
-    padding: 0.5rem 1.5rem;
-    border: 3px solid black;
-    border-radius: 15px;
-    box-shadow: 6px 6px 0 black;
-}
-
-/* Texto burbuja cómic */
-#hero p {
-    font-family: 'Comic Neue', cursive;
-    font-size: 1.2rem;
-    background: white;
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
-    border: 3px solid black;
-    border-radius: 12px;
-    box-shadow: 4px 4px 0 black;
-    margin-top: 1rem;
-    position: relative;
-}
-
-#hero p::after {
-    content: "";
-    position: absolute;
-    bottom: -12px;
-    left: 40px;
-    width: 18px;
-    height: 18px;
-    background: white;
-    border-left: 3px solid black;
-    border-bottom: 3px solid black;
-    transform: rotate(45deg);
+    font-size: 2.5rem;
+    text-shadow: 4px 4px 0 black;
 }
 
 /* =========================
@@ -205,22 +189,25 @@ nav a:hover {
 ========================= */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+    gap: 2rem;
+    padding: 1rem;
 }
 
 .card {
     background: white;
     border: 3px solid black;
-    border-radius: 15px;
-    box-shadow: 6px 6px 0 black;
-    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.2rem;
     text-align: center;
-    transition: transform 0.3s;
+    transition: 0.3s;
+    margin: 0.5rem;
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
+    box-shadow: 12px 12px 0 black;
 }
 
 /* =========================
@@ -228,10 +215,12 @@ nav a:hover {
 ========================= */
 .glass {
     background: var(--glass);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
     border: 3px solid black;
-    border-radius: 15px;
-    box-shadow: 6px 6px 0 black;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin: 1rem 0;
 }
 
 /* =========================
@@ -241,6 +230,11 @@ figure img {
     width: 100%;
     border-radius: 10px;
     border: 2px solid black;
+    transition: 0.3s;
+}
+
+figure img:hover {
+    transform: scale(1.05);
 }
 
 /* =========================
@@ -250,7 +244,8 @@ figure img {
     display: flex;
     gap: 2rem;
     overflow-x: auto;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
+    margin: 1rem;
     scroll-snap-type: x mandatory;
 }
 
@@ -259,11 +254,12 @@ figure img {
     scroll-snap-align: center;
     background: white;
     border: 3px solid black;
-    border-radius: 15px;
-    box-shadow: 5px 5px 0 black;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
     padding: 1rem;
     text-align: center;
-    transition: transform 0.3s;
+    transition: 0.3s;
+    margin: 0.5rem;
 }
 
 .event:hover {
@@ -276,30 +272,31 @@ figure img {
 form {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
 }
 
 input {
     padding: 0.7rem;
     border: 2px solid black;
     border-radius: 10px;
-    margin-top: 0.5rem;
 }
 
 button {
     padding: 0.7rem;
-    margin-top: 0.5rem;
     background: var(--primary);
     color: white;
     border: 2px solid black;
     border-radius: 10px;
     box-shadow: 3px 3px 0 black;
     font-family: 'Fredoka', sans-serif;
+    cursor: pointer;
     transition: 0.2s;
 }
 
 button:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 5px 5px 0 black;
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 black;
 }
 
 /* =========================
@@ -311,7 +308,7 @@ footer {
     border-top: 4px solid black;
     box-shadow: 0 -4px 0 black;
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
     margin-top: 2rem;
 }
 
@@ -320,8 +317,8 @@ footer {
 ========================= */
 .fade {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s cubic-bezier(.19,1,.22,1);
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(.19,1,.22,1);
 }
 
 .fade.visible {
