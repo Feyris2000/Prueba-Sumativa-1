@@ -1,100 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Circo Digital - Experiencia inmersiva futurista de luces, acrobacias y tecnología.">
-<title>Circo Digital</title>
-
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snoopy | Peanuts Landing</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
 <header>
-    <h1>Circo Digital</h1>
-
-    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
-
+    <h1>Snoopy & Peanuts</h1>
     <nav aria-label="Navegación principal">
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#espectaculos">Espectáculos</a></li>
-            <li><a href="#artistas">Artistas</a></li>
-            <li><a href="#entradas">Entradas</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#sobre">Sobre Snoopy</a></li>
+            <li><a href="#personajes">Personajes</a></li>
+            <li><a href="#timeline">Historia</a></li>
+            <li><a href="#newsletter">Novedades</a></li>
         </ul>
     </nav>
 </header>
 
-<main id="inicio">
+<main>
 
-    <section class="hero" aria-labelledby="hero-title">
-        <article>
-            <h2 id="hero-title">Bienvenido al Circo Digital</h2>
-            <p>Una experiencia inmersiva donde el espectáculo y la tecnología se fusionan.</p>
-            <a href="#entradas" class="boton">Comprar Entradas</a>
-        </article>
-    </section>
+<section id="hero">
+    <h2>El mundo de Snoopy</h2>
+    <p>Descubre la historia, personajes y momentos más importantes del universo Peanuts.</p>
+</section>
 
-    <section id="espectaculos" aria-labelledby="espectaculos-title">
-        <h2 id="espectaculos-title">Espectáculos</h2>
-        <div class="grid">
-            <article class="card">
-                <h3>Acrobacias Holográficas</h3>
-                <p>Proyecciones digitales y acrobacias aéreas futuristas.</p>
-            </article>
+<section id="sobre">
+    <article>
+        <h2>¿Quién es Snoopy?</h2>
+        <p>
+            Snoopy es el perro de Charlie Brown en la tira cómica Peanuts creada por Charles M. Schulz.
+            Es conocido por su imaginación, su casa roja y su personalidad única.
+        </p>
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png" alt="Snoopy personaje Peanuts">
+    </article>
+</section>
 
-            <article class="card">
-                <h3>Malabares Láser</h3>
-                <p>Luces láser sincronizadas con música electrónica.</p>
-            </article>
+<section id="personajes">
+    <h2>Personajes principales</h2>
 
-            <article class="card">
-                <h3>Danza Robótica</h3>
-                <p>Coreografías con trajes LED programables.</p>
-            </article>
-        </div>
-    </section>
+    <article>
+        <h3>Charlie Brown</h3>
+        <p>El protagonista principal de Peanuts, conocido por su mala suerte y gran corazón.</p>
+    </article>
 
-    <section id="artistas" aria-labelledby="artistas-title">
-        <h2 id="artistas-title">Artistas</h2>
-        <div class="grid">
-            <article class="card">
-                <h3>NeonFly</h3>
-                <p>Acrobacias aéreas con iluminación LED.</p>
-            </article>
+    <article>
+        <h3>Lucy</h3>
+        <p>Personaje fuerte y dominante, famosa por quitar el balón a Charlie Brown.</p>
+    </article>
 
-            <article class="card">
-                <h3>DJ CyberClown</h3>
-                <p>Música electrónica y espectáculo visual.</p>
-            </article>
-        </div>
-    </section>
+    <article>
+        <h3>Linus</h3>
+        <p>El mejor amigo de Charlie Brown, siempre con su manta.</p>
+    </article>
 
-    <section id="entradas" aria-labelledby="entradas-title">
-        <h2 id="entradas-title">Entradas</h2>
-        <article>
-            <p>Compra tus entradas para vivir el espectáculo.</p>
-            <a href="#" class="boton">Comprar ahora</a>
-        </article>
-    </section>
+</section>
+
+<section id="timeline">
+    <h2>Historia de Peanuts</h2>
+
+    <article>
+        <h3>1950</h3>
+        <p>Se publica la primera tira cómica de Peanuts.</p>
+    </article>
+
+    <article>
+        <h3>1958</h3>
+        <p>Snoopy comienza a caminar en dos patas.</p>
+    </article>
+
+    <article>
+        <h3>1965</h3>
+        <p>Se estrena el especial de Navidad de Charlie Brown.</p>
+    </article>
+
+    <article>
+        <h3>2000</h3>
+        <p>Última tira cómica de Peanuts publicada.</p>
+    </article>
+
+</section>
+
+<section id="newsletter">
+    <h2>Recibe novedades</h2>
+    <form>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Suscribirse</button>
+    </form>
+</section>
 
 </main>
 
-<footer id="contacto">
-    <section aria-labelledby="contacto-title">
-        <h2 id="contacto-title">Contacto</h2>
-        <address>
-            Email: contacto@circodigital.com<br>
-            Tel: +56 9 1234 5678
-        </address>
-    </section>
-
-    <p>&copy; 2026 Circo Digital</p>
+<footer>
+    <p>© 2026 Peanuts Landing Page | Diseño accesible y semántico</p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>

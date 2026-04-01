@@ -1,12 +1,17 @@
 :root {
-    --bg: #0f1020;
-    --text: #ffffff;
-    --primary: #ff2bd6;
-    --secondary: #00e5ff;
-    --card-bg: #1a1b2e;
+    /* Paleta accesible WCAG AA */
+    --bg: #f4f6fb;              /* Fondo claro */
+    --text: #1a1a1a;            /* Texto oscuro */
+    --primary: #2b59c3;         /* Azul botones */
+    --primary-contrast: #ffffff;
+
+    /* Ratios esperados:
+       bg vs text ≈ 12:1 (AAA)
+       primary vs white ≈ 5:1 (AA)
+       Focus/UI ≥ 3:1
+    */
 }
 
-/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -14,169 +19,96 @@
 }
 
 body {
-    font-family: 'Orbitron', sans-serif;
+    font-family: Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
+    line-height: 1.6;
 }
 
 /* Header */
 header {
-    position: sticky;
-    top: 0;
-    background: #0f1020;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    border-bottom: 2px solid var(--primary);
-    z-index: 1000;
+    background: var(--primary);
+    color: var(--primary-contrast);
+    padding: 1rem;
 }
 
-/* Nav */
 nav ul {
-    list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
+    list-style: none;
 }
 
 nav a {
-    color: var(--secondary);
+    color: white;
     text-decoration: none;
 }
 
-nav a:hover {
-    color: var(--primary);
+nav a:focus {
+    outline: 3px solid yellow;
 }
 
 /* Hero */
-.hero {
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#hero {
+    padding: 3rem;
     text-align: center;
 }
 
-.hero h2 {
-    font-size: 3rem;
+/* Secciones */
+section {
+    padding: 2rem;
+}
+
+/* Imágenes */
+img {
+    max-width: 250px;
+    height: auto;
+}
+
+/* Timeline */
+#timeline article {
+    border-left: 4px solid var(--primary);
+    padding-left: 1rem;
     margin-bottom: 1rem;
 }
 
-/* Sections */
-section {
-    padding: 4rem 2rem;
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* Grid */
-.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-/* Cards */
-.card {
-    background: var(--card-bg);
-    border: 2px solid var(--secondary);
-    border-radius: 15px;
-    padding: 1.5rem;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 20px var(--secondary);
-}
-
-.card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 0.5rem;
-}
-
-/* Botones */
-.boton {
-    display: inline-block;
-    background: var(--primary);
-    padding: 0.8rem 1.4rem;
-    border-radius: 8px;
-    text-decoration: none;
-    color: white;
-    margin-top: 1rem;
-}
-
-.boton:hover {
-    background: var(--secondary);
-}
-
-/* Form */
-.form-suscripcion {
+/* Formulario */
+form {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
     max-width: 400px;
 }
 
-input {
-    padding: 0.6rem;
-    border-radius: 6px;
+input, button {
+    padding: 0.7rem;
+    margin-top: 0.5rem;
+}
+
+button {
+    background: var(--primary);
+    color: var(--primary-contrast);
     border: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: 3px solid orange;
 }
 
 /* Footer */
 footer {
-    padding: 2rem;
+    background: #222;
+    color: white;
     text-align: center;
-    border-top: 2px solid var(--primary);
-}
-
-/* Glitch */
-.glitch {
-    position: relative;
-    color: var(--secondary);
-}
-
-.glitch::before,
-.glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 0;
-}
-
-.glitch::before {
-    left: 2px;
-    text-shadow: -2px 0 magenta;
-}
-
-.glitch::after {
-    left: -2px;
-    text-shadow: -2px 0 cyan;
-}
-
-/* Reveal animation */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+    padding: 1rem;
 }
 
 /* Responsive */
-@media (min-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr 1fr;
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
     }
-}
 
-@media (min-width: 1024px) {
-    .grid {
-        grid-template-columns: 1fr 1fr 1fr;
+    #hero {
+        padding: 2rem 1rem;
     }
 }
