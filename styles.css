@@ -1,51 +1,88 @@
+/* =========================
+   FUENTES PEANUTS
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka:wght@400;600&display=swap');
+
+/* =========================
+   VARIABLES
+========================= */
 :root {
     --bg: #fff8dc;
     --text: #222;
     --primary: #e63946;
     --secondary: #ffd166;
     --accent: #457b9d;
-    --glass: rgba(255,255,255,0.25);
+    --white: #ffffff;
+    --black: #000000;
+    --glass: rgba(255,255,255,0.65);
 }
 
 body.dark {
     --bg: #121212;
     --text: #f1f1f1;
-    --glass: rgba(0,0,0,0.3);
+    --glass: rgba(0,0,0,0.45);
 }
 
+/* =========================
+   RESET
+========================= */
 * {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     cursor: url("https://cur.cursors-4u.net/cursors/cur-9/cur862.cur"), auto;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Comic Neue', cursive;
     background: var(--bg);
     color: var(--text);
     transition: 0.5s;
+    line-height: 1.6;
+    font-size: 16px;
 }
 
-/* Loader */
+/* =========================
+   FONDO ANIMADO
+========================= */
+body::before {
+    content:"";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--secondary) 10%, transparent 10%) repeat;
+    background-size: 80px 80px;
+    animation: moveBg 25s linear infinite;
+    opacity: 0.25;
+    z-index: -1;
+}
+
+@keyframes moveBg {
+    from { transform: translate(0,0); }
+    to { transform: translate(-200px,-200px); }
+}
+
+/* =========================
+   LOADER
+========================= */
 #loader {
     position: fixed;
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     background: var(--bg);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    z-index:9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
 }
 
 .spinner {
-    width:50px;
-    height:50px;
-    border:5px solid #ccc;
-    border-top:5px solid var(--primary);
-    border-radius:50%;
+    width: 60px;
+    height: 60px;
+    border: 6px solid #ddd;
+    border-top: 6px solid var(--primary);
+    border-radius: 50%;
     animation: spin 1s linear infinite;
 }
 
@@ -53,105 +90,263 @@ body {
     to { transform: rotate(360deg); }
 }
 
-/* Fondo animado */
-body::before {
-    content:"";
-    position:fixed;
-    width:200%;
-    height:200%;
-    background: radial-gradient(circle, var(--secondary) 10%, transparent 10%) repeat;
-    background-size:80px 80px;
-    animation: moveBg 20s linear infinite;
-    opacity:0.2;
-    z-index:-1;
+/* =========================
+   TIPOGRAFÍA
+========================= */
+h1, h2, h3 {
+    font-family: 'Fredoka', sans-serif;
+    letter-spacing: 1px;
 }
 
-@keyframes moveBg {
-    from {transform: translate(0,0);}
-    to {transform: translate(-200px,-200px);}
+h1 { font-size: 2.3rem; }
+h2 { font-size: 1.9rem; margin-bottom: 1rem; }
+h3 { font-size: 1.3rem; }
+p { font-size: 1rem; }
+
+/* =========================
+   HEADER
+========================= */
+header {
+    background: var(--secondary);
+    border-bottom: 4px solid black;
+    box-shadow: 0 4px 0 black;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* Glass */
+/* =========================
+   MENÚ
+========================= */
+#menu {
+    display: none;
+}
+
+#menu.active {
+    display: block;
+}
+
+#menu ul {
+    list-style: none;
+}
+
+nav a {
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 0 black;
+    text-decoration: none;
+    color: black;
+    font-family: 'Fredoka', sans-serif;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 black;
+}
+
+/* =========================
+   HERO PARALLAX
+========================= */
+#hero {
+    background: url("https://upload.wikimedia.org/wikipedia/commons/3/3a/Snoopy_on_doghouse.png") center/cover fixed;
+    padding: 7rem 2rem;
+    text-align: center;
+    color: black;
+}
+
+/* Título hero estilo cómic */
+#hero h2 {
+    font-size: 2.8rem;
+    font-family: 'Fredoka', sans-serif;
+    background: #ffd166;
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border: 3px solid black;
+    border-radius: 15px;
+    box-shadow: 6px 6px 0 black;
+}
+
+/* Texto burbuja cómic */
+#hero p {
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.2rem;
+    background: white;
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border: 3px solid black;
+    border-radius: 12px;
+    box-shadow: 4px 4px 0 black;
+    margin-top: 1rem;
+    position: relative;
+}
+
+#hero p::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 40px;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    transform: rotate(45deg);
+}
+
+/* =========================
+   GRID Y CARDS
+========================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 1rem;
+}
+
+.card {
+    background: white;
+    border: 3px solid black;
+    border-radius: 15px;
+    box-shadow: 6px 6px 0 black;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* =========================
+   GLASSMORPHISM
+========================= */
 .glass {
     background: var(--glass);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 1rem;
+    backdrop-filter: blur(8px);
+    border: 3px solid black;
+    border-radius: 15px;
+    box-shadow: 6px 6px 0 black;
 }
 
-/* Header */
-header {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
+/* =========================
+   GALERÍA
+========================= */
+figure img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid black;
 }
 
-/* Grid */
-.grid {
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap:1rem;
-}
-
-/* Hero */
-#hero {
-    background:url("https://upload.wikimedia.org/wikipedia/commons/3/3a/Snoopy_on_doghouse.png") center/cover fixed;
-    padding:6rem 2rem;
-    text-align:center;
-    color:white;
-}
-
-/* Timeline horizontal */
+/* =========================
+   TIMELINE HORIZONTAL
+========================= */
 .timeline-horizontal {
-    display:flex;
-    gap:2rem;
-    overflow-x:auto;
-    padding:2rem 0;
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 2rem 0;
     scroll-snap-type: x mandatory;
 }
 
 .event {
-    min-width:200px;
-    scroll-snap-align:center;
-    text-align:center;
-    transition: transform 0.4s;
+    min-width: 220px;
+    scroll-snap-align: center;
+    background: white;
+    border: 3px solid black;
+    border-radius: 15px;
+    box-shadow: 5px 5px 0 black;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s;
 }
 
 .event:hover {
     transform: scale(1.1);
 }
 
-/* Scroll animations */
+/* =========================
+   FORMULARIO
+========================= */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 0.7rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+}
+
+button {
+    padding: 0.7rem;
+    margin-top: 0.5rem;
+    background: var(--primary);
+    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0 black;
+    font-family: 'Fredoka', sans-serif;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 black;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: var(--accent);
+    color: white;
+    border-top: 4px solid black;
+    box-shadow: 0 -4px 0 black;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* =========================
+   SCROLL ANIMATIONS
+========================= */
 .fade {
-    opacity:0;
+    opacity: 0;
     transform: translateY(40px);
     transition: all 1s cubic-bezier(.19,1,.22,1);
 }
 
 .fade.visible {
-    opacity:1;
+    opacity: 1;
     transform: translateY(0);
 }
 
-/* Form */
-form {
-    display:flex;
-    flex-direction:column;
-}
-
-input, button {
-    padding:0.7rem;
-    margin-top:0.5rem;
-}
-
-/* Responsive */
+/* =========================
+   RESPONSIVE
+========================= */
 @media(min-width:768px){
     #menu {
-        display:block !important;
+        display: block !important;
     }
+
     #menuToggle {
-        display:none;
+        display: none;
+    }
+
+    #menu ul {
+        display: flex;
+        gap: 1rem;
+    }
+
+    #hero {
+        padding: 9rem 2rem;
     }
 }
