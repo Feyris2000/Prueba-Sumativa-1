@@ -1,20 +1,12 @@
 :root {
-    --bg: #0a0a0f;
-    --text: #f5f5f5;
-    --primary: #00e5ff;
-    --primary-contrast: #001014;
-    --card-bg: #11111a;
+    --bg: #0f1020;
+    --text: #ffffff;
+    --primary: #ff2bd6;
+    --secondary: #00e5ff;
+    --card-bg: #1a1b2e;
 }
 
-/* Modo claro automático */
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg: #ffffff;
-        --text: #111;
-        --card-bg: #f3f3f3;
-    }
-}
-
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -25,44 +17,56 @@ body {
     font-family: 'Orbitron', sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.6;
 }
 
 /* Header */
 header {
-    padding: 1rem;
-    border-bottom: 1px solid var(--primary);
+    position: sticky;
+    top: 0;
+    background: #0f1020;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--primary);
+    z-index: 1000;
 }
 
-/* NAV */
+/* Nav */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 nav a {
-    color: var(--primary);
+    color: var(--secondary);
     text-decoration: none;
 }
 
-/* Menu hamburguesa */
-.menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    background: none;
+nav a:hover {
     color: var(--primary);
-    border: none;
 }
 
 /* Hero */
 .hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 6rem 2rem;
-    background: radial-gradient(circle, #111, #050505);
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Sections */
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* Grid */
@@ -70,42 +74,98 @@ nav a {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    margin-top: 2rem;
 }
 
-/* Cards neon */
+/* Cards */
 .card {
     background: var(--card-bg);
+    border: 2px solid var(--secondary);
+    border-radius: 15px;
     padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid rgba(0,229,255,0.3);
     transition: 0.3s;
 }
 
 .card:hover {
-    box-shadow: 0 0 15px #00e5ff;
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px var(--secondary);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
 }
 
 /* Botones */
 .boton {
     display: inline-block;
     background: var(--primary);
-    color: var(--primary-contrast);
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 1.4rem;
+    border-radius: 8px;
     text-decoration: none;
-    border-radius: 4px;
+    color: white;
     margin-top: 1rem;
 }
 
 .boton:hover {
-    box-shadow: 0 0 10px #00e5ff;
+    background: var(--secondary);
+}
+
+/* Form */
+.form-suscripcion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 400px;
+}
+
+input {
+    padding: 0.6rem;
+    border-radius: 6px;
+    border: none;
 }
 
 /* Footer */
 footer {
-    border-top: 1px solid var(--primary);
     padding: 2rem;
     text-align: center;
+    border-top: 2px solid var(--primary);
+}
+
+/* Glitch */
+.glitch {
+    position: relative;
+    color: var(--secondary);
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 magenta;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 cyan;
+}
+
+/* Reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Responsive */
@@ -118,22 +178,5 @@ footer {
 @media (min-width: 1024px) {
     .grid {
         grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-/* Mobile menu */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        margin-top: 1rem;
-    }
-
-    nav ul.active {
-        display: flex;
     }
 }
