@@ -1,0 +1,139 @@
+:root {
+    --bg: #0a0a0f;
+    --text: #f5f5f5;
+    --primary: #00e5ff;
+    --primary-contrast: #001014;
+    --card-bg: #11111a;
+}
+
+/* Modo claro automático */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #ffffff;
+        --text: #111;
+        --card-bg: #f3f3f3;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* NAV */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Menu hamburguesa */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    color: var(--primary);
+    border: none;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: radial-gradient(circle, #111, #050505);
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* Cards neon */
+.card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0,229,255,0.3);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px #00e5ff;
+    transform: translateY(-5px);
+}
+
+/* Botones */
+.boton {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--primary-contrast);
+    padding: 0.8rem 1.2rem;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.boton:hover {
+    box-shadow: 0 0 10px #00e5ff;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--primary);
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
