@@ -48,12 +48,39 @@ body {
 }
 
 /* =========================
-   CONTENEDOR PRINCIPAL
+   CONTENEDOR
 ========================= */
 main {
     max-width: 1200px;
     margin: auto;
     padding: 2rem;
+}
+
+/* =========================
+   BOTÓN SUBIR (MUY VISIBLE)
+========================= */
+#topBtn {
+    position: fixed;
+    top: 120px;
+    right: 25px;
+    background: var(--primary);
+    color: white;
+    font-size: 1.8rem;
+    border: 4px solid black;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    box-shadow: 6px 6px 0 black;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+#topBtn:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 10px 10px 0 black;
 }
 
 /* =========================
@@ -124,7 +151,7 @@ h2 {
 }
 
 /* =========================
-   HEADER / NAV
+   HEADER
 ========================= */
 header {
     background: var(--secondary);
@@ -139,7 +166,6 @@ header {
     z-index: 1000;
 }
 
-/* MENÚ */
 #menu {
     display: none;
 }
@@ -170,22 +196,40 @@ nav a:hover {
 }
 
 /* =========================
-   HERO PARALLAX
+   HERO
 ========================= */
 #hero {
     background: url("https://upload.wikimedia.org/wikipedia/commons/3/3a/Snoopy_on_doghouse.png") center/cover fixed;
-    padding: 7rem 2rem;
+    padding: 8rem 2rem;
     text-align: center;
-    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-box {
+    background: var(--secondary);
+    border: 4px solid black;
+    box-shadow: 6px 6px 0 black;
+    border-radius: var(--radius);
+    padding: 2rem 2.5rem;
+    max-width: 700px;
+    backdrop-filter: blur(5px);
 }
 
 #hero h2 {
-    font-size: 2.5rem;
-    text-shadow: 4px 4px 0 black;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: black;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    color: black;
 }
 
 /* =========================
-   GRID Y CARDS
+   GRID / CARDS
 ========================= */
 .grid {
     display: grid;
@@ -202,7 +246,6 @@ nav a:hover {
     padding: 1.2rem;
     text-align: center;
     transition: 0.3s;
-    margin: 0.5rem;
 }
 
 .card:hover {
@@ -211,7 +254,7 @@ nav a:hover {
 }
 
 /* =========================
-   GLASSMORPHISM
+   GLASS
 ========================= */
 .glass {
     background: var(--glass);
@@ -220,7 +263,6 @@ nav a:hover {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 2rem;
-    margin: 1rem 0;
 }
 
 /* =========================
@@ -238,14 +280,13 @@ figure img:hover {
 }
 
 /* =========================
-   TIMELINE HORIZONTAL
+   TIMELINE
 ========================= */
 .timeline-horizontal {
     display: flex;
     gap: 2rem;
     overflow-x: auto;
     padding: 2rem 1rem;
-    margin: 1rem;
     scroll-snap-type: x mandatory;
 }
 
@@ -259,7 +300,6 @@ figure img:hover {
     padding: 1rem;
     text-align: center;
     transition: 0.3s;
-    margin: 0.5rem;
 }
 
 .event:hover {
@@ -309,11 +349,10 @@ footer {
     box-shadow: 0 -4px 0 black;
     text-align: center;
     padding: 1.5rem;
-    margin-top: 2rem;
 }
 
 /* =========================
-   SCROLL ANIMATIONS
+   ANIMACIONES
 ========================= */
 .fade {
     opacity: 0;
@@ -345,5 +384,22 @@ footer {
 
     #hero {
         padding: 9rem 2rem;
+    }
+}
+
+@media(max-width:600px){
+    #hero h2 {
+        font-size: 2rem;
+    }
+    .hero-box {
+        padding: 1.2rem 1.4rem;
+    }
+
+    #topBtn {
+        top: 100px;
+        right: 15px;
+        width: 55px;
+        height: 55px;
+        font-size: 1.5rem;
     }
 }

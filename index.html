@@ -15,19 +15,14 @@
   <p>Cargando mundo Peanuts...</p>
 </div>
 
-<!-- NUBES -->
-<div class="clouds">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Cloud_icon.svg" class="cloud cloud1">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Cloud_icon.svg" class="cloud cloud2">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Cloud_icon.svg" class="cloud cloud3">
-</div>
-
-<!-- WOODSTOCK -->
-<img src="https://upload.wikimedia.org/wikipedia/en/8/87/Woodstock_%28Peanuts%29.png" id="woodstock">
-
 <header>
   <h1>Snoopy & Peanuts</h1>
-  <button id="menuToggle">☰</button>
+
+  <div class="header-buttons">
+    <button id="darkModeToggle">🌙</button>
+    <button id="menuToggle">☰</button>
+  </div>
+
   <nav id="menu">
     <ul>
       <li><a href="#historia">Historia</a></li>
@@ -41,9 +36,12 @@
 
 <main>
 
+<!-- HERO -->
 <section id="hero">
-  <h2>Bienvenido al mundo de Snoopy</h2>
-  <p>Un universo lleno de imaginación, amistad y aventuras.</p>
+  <div class="hero-box fade">
+    <h2>Bienvenido al mundo de Snoopy</h2>
+    <p>Un universo lleno de imaginación, amistad y aventuras.</p>
+  </div>
 </section>
 
 <section id="historia" class="glass fade">
@@ -56,46 +54,53 @@
 <section id="personajes">
   <h2>Personajes</h2>
   <div class="grid">
-    <article class="card fade">
-      <h3>Snoopy</h3>
-      <p>El perro soñador.</p>
-    </article>
-    <article class="card fade">
-      <h3>Charlie Brown</h3>
-      <p>El protagonista.</p>
-    </article>
-    <article class="card fade">
-      <h3>Lucy</h3>
-      <p>Fuerte personalidad.</p>
-    </article>
-    <article class="card fade">
-      <h3>Linus</h3>
-      <p>Siempre con su manta.</p>
-    </article>
+    <article class="card fade"><h3>Snoopy</h3><p>El perro soñador.</p></article>
+    <article class="card fade"><h3>Charlie Brown</h3><p>El protagonista.</p></article>
+    <article class="card fade"><h3>Lucy</h3><p>Fuerte personalidad.</p></article>
+    <article class="card fade"><h3>Linus</h3><p>Siempre con su manta.</p></article>
+    <article class="card fade"><h3>Sally</h3><p>Hermana de Charlie Brown.</p></article>
+    <article class="card fade"><h3>Schroeder</h3><p>Amante de Beethoven.</p></article>
+    <article class="card fade"><h3>Peppermint Patty</h3><p>Deportista.</p></article>
+    <article class="card fade"><h3>Marcie</h3><p>Muy inteligente.</p></article>
+    <article class="card fade"><h3>Woodstock</h3><p>Amigo de Snoopy.</p></article>
+    <article class="card fade"><h3>Franklin</h3><p>Amigo del grupo.</p></article>
   </div>
 </section>
 
 <section id="galeria">
   <h2>Galería</h2>
   <div class="grid">
-    <figure class="card fade">
-      <img src="https://upload.wikimedia.org/wikipedia/en/5/5b/Snoopy.png">
-      <figcaption>Snoopy</figcaption>
-    </figure>
-    <figure class="card fade">
-      <img src="https://upload.wikimedia.org/wikipedia/en/2/22/Charlie_Brown.png">
-      <figcaption>Charlie Brown</figcaption>
-    </figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/5/5b/Snoopy.png"><figcaption>Snoopy</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/2/22/Charlie_Brown.png"><figcaption>Charlie Brown</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/6/63/Lucy_van_Pelt.png"><figcaption>Lucy</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/3/34/Linus_van_Pelt.png"><figcaption>Linus</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/8/8e/Sally_Brown.png"><figcaption>Sally</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Schroeder.png"><figcaption>Schroeder</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/0/02/Peppermint_Patty.png"><figcaption>Peppermint Patty</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/2/24/Marcie.png"><figcaption>Marcie</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/8/87/Woodstock_%28Peanuts%29.png"><figcaption>Woodstock</figcaption></figure>
+    <figure class="card fade"><img src="https://upload.wikimedia.org/wikipedia/en/4/45/Franklin_%28Peanuts%29.png"><figcaption>Franklin</figcaption></figure>
   </div>
 </section>
 
 <section id="timeline">
   <h2>Timeline Peanuts</h2>
+
   <div class="timeline-horizontal">
-    <article class="event">1950 - Nace Peanuts</article>
-    <article class="event">1965 - Especial Navidad</article>
-    <article class="event">1969 - Llegan a la Luna</article>
-    <article class="event">2000 - Fin del cómic</article>
+
+    <article class="event">1950 – Primera tira de Peanuts</article>
+    <article class="event">1952 – Aparecen Lucy y Linus</article>
+    <article class="event">1957 – Snoopy empieza a caminar en dos patas</article>
+    <article class="event">1965 – Estreno del especial navideño (ganó Emmy)</article>
+    <article class="event">1966 – Snoopy como piloto del Barón Rojo</article>
+    <article class="event">1968 – Primera aparición de Franklin</article>
+    <article class="event">1969 – NASA adopta a Snoopy como mascota de seguridad</article>
+    <article class="event">1985 – Schulz recibe estrella en Hollywood</article>
+    <article class="event">1990 – 40° aniversario de Peanuts</article>
+    <article class="event">2000 – Última tira publicada</article>
+    <article class="event">2015 – Estreno de "The Peanuts Movie"</article>
+    <article class="event">2021 – Nuevas series en Apple TV+</article>
+
   </div>
 </section>
 
@@ -122,9 +127,14 @@ window.addEventListener("load", () => {
   document.getElementById("loader").style.display = "none";
 });
 
-/* Menu hamburguesa */
+/* Menu */
 document.getElementById("menuToggle").onclick = () => {
   document.getElementById("menu").classList.toggle("active");
+};
+
+/* Dark mode */
+document.getElementById("darkModeToggle").onclick = () => {
+  document.body.classList.toggle("dark");
 };
 
 /* Scroll animations */
@@ -140,12 +150,15 @@ window.addEventListener("scroll", () => {
 /* Botón subir */
 const topBtn = document.getElementById("topBtn");
 window.onscroll = () => {
-  if(document.documentElement.scrollTop > 300){
-    topBtn.style.display = "block";
+  if(document.documentElement.scrollTop > 200){
+    topBtn.style.opacity = "1";
+    topBtn.style.pointerEvents = "auto";
   } else {
-    topBtn.style.display = "none";
+    topBtn.style.opacity = "0";
+    topBtn.style.pointerEvents = "none";
   }
 };
+
 topBtn.onclick = () => {
   window.scrollTo({top:0, behavior:'smooth'});
 };
