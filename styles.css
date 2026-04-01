@@ -1,114 +1,157 @@
 :root {
-    /* Paleta accesible WCAG AA */
-    --bg: #f4f6fb;              /* Fondo claro */
-    --text: #1a1a1a;            /* Texto oscuro */
-    --primary: #2b59c3;         /* Azul botones */
-    --primary-contrast: #ffffff;
+    --bg: #fff8dc;
+    --text: #222;
+    --primary: #e63946;
+    --secondary: #ffd166;
+    --accent: #457b9d;
+    --glass: rgba(255,255,255,0.25);
+}
 
-    /* Ratios esperados:
-       bg vs text ≈ 12:1 (AAA)
-       primary vs white ≈ 5:1 (AA)
-       Focus/UI ≥ 3:1
-    */
+body.dark {
+    --bg: #121212;
+    --text: #f1f1f1;
+    --glass: rgba(0,0,0,0.3);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    cursor: url("https://cur.cursors-4u.net/cursors/cur-9/cur862.cur"), auto;
 }
 
 body {
     font-family: Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.6;
+    transition: 0.5s;
+}
+
+/* Loader */
+#loader {
+    position: fixed;
+    width:100%;
+    height:100%;
+    background: var(--bg);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:9999;
+}
+
+.spinner {
+    width:50px;
+    height:50px;
+    border:5px solid #ccc;
+    border-top:5px solid var(--primary);
+    border-radius:50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Fondo animado */
+body::before {
+    content:"";
+    position:fixed;
+    width:200%;
+    height:200%;
+    background: radial-gradient(circle, var(--secondary) 10%, transparent 10%) repeat;
+    background-size:80px 80px;
+    animation: moveBg 20s linear infinite;
+    opacity:0.2;
+    z-index:-1;
+}
+
+@keyframes moveBg {
+    from {transform: translate(0,0);}
+    to {transform: translate(-200px,-200px);}
+}
+
+/* Glass */
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1rem;
 }
 
 /* Header */
 header {
-    background: var(--primary);
-    color: var(--primary-contrast);
-    padding: 1rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
 }
 
-nav ul {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-}
-
-nav a:focus {
-    outline: 3px solid yellow;
+/* Grid */
+.grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap:1rem;
 }
 
 /* Hero */
 #hero {
-    padding: 3rem;
-    text-align: center;
+    background:url("https://upload.wikimedia.org/wikipedia/commons/3/3a/Snoopy_on_doghouse.png") center/cover fixed;
+    padding:6rem 2rem;
+    text-align:center;
+    color:white;
 }
 
-/* Secciones */
-section {
-    padding: 2rem;
+/* Timeline horizontal */
+.timeline-horizontal {
+    display:flex;
+    gap:2rem;
+    overflow-x:auto;
+    padding:2rem 0;
+    scroll-snap-type: x mandatory;
 }
 
-/* Imágenes */
-img {
-    max-width: 250px;
-    height: auto;
+.event {
+    min-width:200px;
+    scroll-snap-align:center;
+    text-align:center;
+    transition: transform 0.4s;
 }
 
-/* Timeline */
-#timeline article {
-    border-left: 4px solid var(--primary);
-    padding-left: 1rem;
-    margin-bottom: 1rem;
+.event:hover {
+    transform: scale(1.1);
 }
 
-/* Formulario */
+/* Scroll animations */
+.fade {
+    opacity:0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(.19,1,.22,1);
+}
+
+.fade.visible {
+    opacity:1;
+    transform: translateY(0);
+}
+
+/* Form */
 form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
+    display:flex;
+    flex-direction:column;
 }
 
 input, button {
-    padding: 0.7rem;
-    margin-top: 0.5rem;
-}
-
-button {
-    background: var(--primary);
-    color: var(--primary-contrast);
-    border: none;
-    cursor: pointer;
-}
-
-button:focus {
-    outline: 3px solid orange;
-}
-
-/* Footer */
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 1rem;
+    padding:0.7rem;
+    margin-top:0.5rem;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
+@media(min-width:768px){
+    #menu {
+        display:block !important;
     }
-
-    #hero {
-        padding: 2rem 1rem;
+    #menuToggle {
+        display:none;
     }
 }

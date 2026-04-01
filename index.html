@@ -1,102 +1,173 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snoopy | Peanuts Landing</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snoopy | Peanuts</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
+<div id="loader">
+    <div class="spinner"></div>
+    <p>Cargando mundo Peanuts...</p>
+</div>
+
+<header class="glass">
     <h1>Snoopy & Peanuts</h1>
-    <nav aria-label="Navegación principal">
+
+    <button id="menuToggle">☰</button>
+
+    <nav id="menu">
         <ul>
-            <li><a href="#sobre">Sobre Snoopy</a></li>
+            <li><a href="#sobre">Sobre</a></li>
             <li><a href="#personajes">Personajes</a></li>
+            <li><a href="#galeria">Galería</a></li>
             <li><a href="#timeline">Historia</a></li>
             <li><a href="#newsletter">Novedades</a></li>
         </ul>
     </nav>
+
+    <button id="darkModeToggle">🌙</button>
 </header>
 
 <main>
 
-<section id="hero">
-    <h2>El mundo de Snoopy</h2>
-    <p>Descubre la historia, personajes y momentos más importantes del universo Peanuts.</p>
+<section id="hero" class="fade">
+    <h2>Bienvenido al mundo de Snoopy</h2>
+    <p>Peanuts es una de las historietas más influyentes del mundo, creada por Charles M. Schulz.</p>
 </section>
 
-<section id="sobre">
-    <article>
-        <h2>¿Quién es Snoopy?</h2>
+<section id="sobre" class="fade">
+    <article class="card glass">
+        <h2>Sobre Peanuts</h2>
         <p>
-            Snoopy es el perro de Charlie Brown en la tira cómica Peanuts creada por Charles M. Schulz.
-            Es conocido por su imaginación, su casa roja y su personalidad única.
+            Peanuts debutó en 1950 y se convirtió en una de las tiras cómicas más populares de la historia.
+            Snoopy, Charlie Brown y sus amigos protagonizan historias sobre amistad, vida y crecimiento.
         </p>
-        <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png" alt="Snoopy personaje Peanuts">
+        <p>
+            La serie fue publicada en más de 2600 periódicos en 75 países y traducida a 21 idiomas.
+        </p>
     </article>
 </section>
 
-<section id="personajes">
+<section id="personajes" class="fade">
     <h2>Personajes principales</h2>
-
-    <article>
-        <h3>Charlie Brown</h3>
-        <p>El protagonista principal de Peanuts, conocido por su mala suerte y gran corazón.</p>
-    </article>
-
-    <article>
-        <h3>Lucy</h3>
-        <p>Personaje fuerte y dominante, famosa por quitar el balón a Charlie Brown.</p>
-    </article>
-
-    <article>
-        <h3>Linus</h3>
-        <p>El mejor amigo de Charlie Brown, siempre con su manta.</p>
-    </article>
-
+    <div class="grid">
+        <article class="card glass"><h3>Snoopy</h3><p>Perro imaginativo y escritor.</p></article>
+        <article class="card glass"><h3>Charlie Brown</h3><p>Protagonista principal.</p></article>
+        <article class="card glass"><h3>Lucy</h3><p>Fuerte personalidad.</p></article>
+        <article class="card glass"><h3>Linus</h3><p>Filósofo con manta.</p></article>
+        <article class="card glass"><h3>Sally</h3><p>Hermana de Charlie Brown.</p></article>
+        <article class="card glass"><h3>Woodstock</h3><p>Mejor amigo de Snoopy.</p></article>
+        <article class="card glass"><h3>Schroeder</h3><p>Fan de Beethoven.</p></article>
+        <article class="card glass"><h3>Peppermint Patty</h3><p>Amiga deportista.</p></article>
+    </div>
 </section>
 
-<section id="timeline">
+<section id="galeria" class="fade">
+    <h2>Galería</h2>
+    <div class="grid">
+        <figure class="card glass">
+            <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Snoopy_Peanuts.png">
+            <figcaption>Snoopy</figcaption>
+        </figure>
+        <figure class="card glass">
+            <img src="https://upload.wikimedia.org/wikipedia/en/2/22/Charlie_Brown.png">
+            <figcaption>Charlie Brown</figcaption>
+        </figure>
+        <figure class="card glass">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Woodstock.png">
+            <figcaption>Woodstock</figcaption>
+        </figure>
+    </div>
+</section>
+
+<section id="timeline" class="fade">
     <h2>Historia de Peanuts</h2>
 
-    <article>
-        <h3>1950</h3>
-        <p>Se publica la primera tira cómica de Peanuts.</p>
-    </article>
+    <div class="timeline-horizontal">
+        <article class="event glass">
+            <time>1950</time>
+            <p>Primera tira cómica publicada.</p>
+        </article>
 
-    <article>
-        <h3>1958</h3>
-        <p>Snoopy comienza a caminar en dos patas.</p>
-    </article>
+        <article class="event glass">
+            <time>1958</time>
+            <p>Snoopy comienza a caminar en dos patas.</p>
+        </article>
 
-    <article>
-        <h3>1965</h3>
-        <p>Se estrena el especial de Navidad de Charlie Brown.</p>
-    </article>
+        <article class="event glass">
+            <time>1965</time>
+            <p>Especial navideño de Charlie Brown.</p>
+        </article>
 
-    <article>
-        <h3>2000</h3>
-        <p>Última tira cómica de Peanuts publicada.</p>
-    </article>
+        <article class="event glass">
+            <time>1969</time>
+            <p>Apollo 10 usa a Snoopy como mascota de seguridad NASA.</p>
+        </article>
 
+        <article class="event glass">
+            <time>1984</time>
+            <p>Peanuts aparece en videojuegos.</p>
+        </article>
+
+        <article class="event glass">
+            <time>2000</time>
+            <p>Última tira cómica publicada.</p>
+        </article>
+
+        <article class="event glass">
+            <time>2015</time>
+            <p>Película The Peanuts Movie.</p>
+        </article>
+    </div>
 </section>
 
-<section id="newsletter">
-    <h2>Recibe novedades</h2>
-    <form>
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required>
-        <button type="submit">Suscribirse</button>
-    </form>
+<section id="newsletter" class="fade">
+    <article class="card glass">
+        <h2>Recibe novedades</h2>
+        <form>
+            <label for="email">Correo:</label>
+            <input type="email" id="email" required>
+            <button>Suscribirse</button>
+        </form>
+    </article>
 </section>
 
 </main>
 
-<footer>
-    <p>© 2026 Peanuts Landing Page | Diseño accesible y semántico</p>
+<footer class="glass">
+    <p>© 2026 Snoopy Landing</p>
 </footer>
+
+<script>
+/* Loader */
+window.addEventListener("load", () => {
+    document.getElementById("loader").style.display = "none";
+});
+
+/* Menú hamburguesa */
+document.getElementById("menuToggle").onclick = () => {
+    document.getElementById("menu").classList.toggle("active");
+};
+
+/* Modo oscuro */
+document.getElementById("darkModeToggle").onclick = () => {
+    document.body.classList.toggle("dark");
+};
+
+/* Animaciones scroll */
+const faders = document.querySelectorAll(".fade");
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("visible");
+        }
+    });
+});
+faders.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
