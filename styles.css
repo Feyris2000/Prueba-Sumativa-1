@@ -19,10 +19,42 @@
     --shadow: 6px 6px 0 black;
 }
 
+/* =========================
+   MODO OSCURO (AJUSTADO – PALETA CÁLIDA)
+========================= */
 body.dark {
-    --bg: #121212;
-    --text: #f1f1f1;
-    --glass: rgba(0,0,0,0.4);
+    --bg: #24221c;                 /* Oscuro cálido */
+    --text: #f2f2f2;               /* Texto claro suave */
+    --glass: rgba(0,0,0,0.35);
+
+    --primary: #b84a4f;            /* Rojo suave */
+    --secondary: #d4b85f;          /* Amarillo suave */
+    --white: #e6e6e6;              /* Blanco tenue */
+
+    --accent: #6d8ea6;             /* Azul apagado */
+}
+
+/* Ajuste específico de tarjetas, formularios y rectángulos */
+body.dark .card,
+body.dark .event,
+body.dark .glass,
+body.dark form,
+body.dark input {
+    background: #2f2c24 !important; /* Fondo oscuro cálido */
+    color: var(--text) !important;
+    border-color: #3c3a32 !important;
+}
+
+body.dark button {
+    background: var(--primary);
+    color: var(--white);
+    border-color: #3c3a32;
+}
+
+body.dark nav a {
+    background: #3b382f;
+    color: var(--text);
+    border-color: #4a473d;
 }
 
 /* =========================
@@ -57,7 +89,7 @@ main {
 }
 
 /* =========================
-   BOTÓN SUBIR (MUY VISIBLE)
+   BOTÓN SUBIR
 ========================= */
 #topBtn {
     position: fixed;
